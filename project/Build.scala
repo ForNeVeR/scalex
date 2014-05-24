@@ -27,13 +27,14 @@ trait Dependencies {
     val actor = "com.typesafe.akka" %% "akka-actor" % version
   }
   object play {
-    val version = "2.2.1"
+    val version = "2.2.3"
     val json = "com.typesafe.play" %% "play-json" % version
   }
   object apache {
     val io = "commons-io" % "commons-io" % "2.4"
   }
   val specs2 = "org.specs2" %% "specs2" % "2.3.1" % "test"
+  val annotations = "com.google.code.findbugs" % "jsr305" % "1.3.+"
 }
 
 object ScalexBuild extends Build with Resolvers with Dependencies {
@@ -60,6 +61,6 @@ object ScalexBuild extends Build with Resolvers with Dependencies {
     libraryDependencies ++= Seq(
       compiler, config, scalaz, scalazContrib, semver,
       scopt, sbinary, elastic4s, akka.actor, play.json,
-      apache.io, specs2, tiscaf)
+      apache.io, specs2, tiscaf, annotations)
   )
 }
